@@ -22,6 +22,14 @@ public class MinioController {
         return minioService.upload(file);
     }
 
+    /**
+     * 删除文件
+     */
+    @PostMapping("/common/deletefile")
+    public ApiResult uploadFile(String fileName ) throws Exception {
+        return minioService.deleteFile(fileName);
+    }
+
     @GetMapping("/test")
     public ApiResult test(@RequestParam String a) {
         return ApiResult.ok(a);

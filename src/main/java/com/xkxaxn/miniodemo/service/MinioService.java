@@ -1,8 +1,8 @@
-package com.xkxaxn.minio_super.service;
+package com.xkxaxn.miniodemo.service;
 
-import com.xkxaxn.minio_super.common.UUIDTool;
-import com.xkxaxn.minio_super.common.constant.api.ApiResult;
-import com.xkxaxn.minio_super.config.minio.MinioParam;
+import com.xkxaxn.miniodemo.common.UUIDTool;
+import com.xkxaxn.miniodemo.common.constant.api.ApiResult;
+import com.xkxaxn.miniodemo.config.minio.MinioParam;
 import io.minio.MinioClient;
 import io.minio.PutObjectArgs;
 import io.minio.RemoveObjectArgs;

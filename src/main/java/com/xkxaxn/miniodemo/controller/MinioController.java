@@ -1,7 +1,7 @@
-package com.xkxaxn.minio_super.controller;
+package com.xkxaxn.miniodemo.controller;
 
-import com.xkxaxn.minio_super.common.constant.api.ApiResult;
-import com.xkxaxn.minio_super.service.MinioService;
+import com.xkxaxn.miniodemo.common.constant.api.ApiResult;
+import com.xkxaxn.miniodemo.service.MinioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

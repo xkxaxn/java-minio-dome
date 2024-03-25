@@ -1,4 +1,4 @@
-package com.xkxaxn.minio_super.config.minio;
+package com.xkxaxn.miniodemo.config.minio;
 
 import io.minio.MinioClient;
 import org.apache.commons.pool2.impl.GenericObjectPool;

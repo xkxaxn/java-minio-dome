@@ -1,8 +1,8 @@
-package com.xkxaxn.minio_super.common.constant.api;
+package com.xkxaxn.miniodemo.common.constant.api;
 
 import com.alibaba.fastjson2.function.impl.ToString;
-import com.xkxaxn.minio_super.common.constant.code.RCode;
-import com.xkxaxn.minio_super.common.constant.code.RCodeEnum;
+import com.xkxaxn.miniodemo.common.constant.code.RCode;
+import com.xkxaxn.miniodemo.common.constant.code.RCodeEnum;
 import lombok.Getter;
 
 import java.io.Serializable;

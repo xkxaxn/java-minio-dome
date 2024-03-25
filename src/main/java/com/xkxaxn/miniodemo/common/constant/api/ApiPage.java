@@ -1,4 +1,4 @@
-package com.xkxaxn.minio_super.common.constant.api;
+package com.xkxaxn.miniodemo.common.constant.api;
 
 import com.github.pagehelper.PageInfo;
 import org.springframework.data.domain.Page;

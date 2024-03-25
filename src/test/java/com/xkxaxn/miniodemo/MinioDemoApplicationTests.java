@@ -1,10 +1,10 @@
-package com.xkxaxn.minio_super;
+package com.xkxaxn.miniodemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MinioSuperApplicationTests {
+class MinioDemoApplicationTests {
 
     @Test
     void contextLoads() {

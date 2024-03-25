@@ -1,0 +1,16 @@
+# 基础配置
+server:
+  port: 8080
+
+# Minio配置
+minio:
+  # minio服务所在的目标ip
+  endpoint: http://192.168.1.1
+  # 端口
+  port: 9000
+  # 登录时的账户
+  accessKey: ROOTNAME
+  # 密码
+  secretKey: CHANGEME123
+  # 存储的桶
+  bucketName: note

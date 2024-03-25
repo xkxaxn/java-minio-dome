@@ -31,9 +31,11 @@ public class MinioService {
         String filePrefix = "";
         String fileSuffix = "";
         String fileContentType = "";
+        String fileType = "";
         String fileSizeKb = "";
         String newFileName = "";
         String filePath = "";
+
 
         //文件处理
         //文件不能为空
@@ -53,6 +55,12 @@ public class MinioService {
             fileSuffix = fileExtension;
             fileContentType = file.getContentType();
             fileSizeKb = String.valueOf(file.getSize() / 1024);
+
+            //获取文件类型
+            String[] parts = fileContentType.split("/");
+            if (parts.length > 0) {
+                fileType = parts[0];
+            }
         }
 
         //文件检查
@@ -93,7 +101,9 @@ public class MinioService {
         String data = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
 
         newFileName = UUID.randomUUID().toString() + '.' + fileSuffix;
+        // 文件类型/日期/uuid.后缀
         filePath = fileType + '/' + data + "/" + newFileName;
+
         //操作文件，文件上传
         minioClient.putObject(
                 PutObjectArgs.builder().bucket(minioConfig.getBucketName())

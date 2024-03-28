@@ -1,4 +1,4 @@
-package com.xkxaxn.miniodemo.config.minio;
+package com.xkxaxn.minio_demo.config.minio;
 
 import io.minio.MinioClient;
 import org.apache.commons.pool2.BasePooledObjectFactory;

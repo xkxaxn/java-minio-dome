@@ -107,7 +107,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.xkxaxn.miniodemo.MinioDemoApplication</mainClass>
+                    <mainClass>com.xkxaxn.minio_demo.MinioDemoApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>

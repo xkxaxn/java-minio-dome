@@ -1,4 +1,4 @@
-package com.xkxaxn.miniodemo.common.constant.code;
+package com.xkxaxn.minio_demo.common.constant.code;
 
 public interface RCode {
 

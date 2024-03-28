@@ -1,4 +1,4 @@
-package com.xkxaxn.miniodemo.config.minio;
+package com.xkxaxn.minio_demo.config.minio;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

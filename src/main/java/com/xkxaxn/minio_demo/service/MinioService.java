@@ -1,11 +1,9 @@
-package com.xkxaxn.miniodemo.service;
+package com.xkxaxn.minio_demo.service;
 
-import com.xkxaxn.miniodemo.common.UUIDTool;
-import com.xkxaxn.miniodemo.common.constant.api.ApiResult;
-import com.xkxaxn.miniodemo.config.minio.MinioParam;
-import io.minio.MinioClient;
-import io.minio.PutObjectArgs;
-import io.minio.RemoveObjectArgs;
+import com.xkxaxn.minio_demo.common.UUIDTool;
+import com.xkxaxn.minio_demo.common.constant.api.ApiResult;
+import com.xkxaxn.minio_demo.config.minio.MinioParam;
+import io.minio.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.pool2.impl.GenericObjectPool;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,27 +80,6 @@ public class MinioService {
             }
         }
 
-
-        ////minio处理
-        ////创建Minio的连接对象
-        //MinioClient minioClient = MinioClient.builder()
-        //        .endpoint(minioParam.getEndpoint())
-        //        .credentials(minioParam.getAccessKey(), minioParam.getSecretKey())
-        //        .build();
-        //
-        ////判断文件存储的桶是否存在
-        //boolean flag = minioClient.bucketExists(
-        //        BucketExistsArgs.builder().bucket(minioParam.getBucketName()).build()
-        //);
-        //
-        ////判断是否存在该桶
-        //if (!flag) {
-        //    //不存在就创建
-        //    minioClient.makeBucket(
-        //            MakeBucketArgs.builder().bucket(minioParam.getBucketName()).build()
-        //    );
-        //}
-
         //将连接持久化
         MinioClient minioClient = minioClientPool.borrowObject();
 
@@ -115,7 +92,8 @@ public class MinioService {
 
         //操作文件，文件上传
         minioClient.putObject(
-                PutObjectArgs.builder().bucket(minioParam.getBucketName())
+                PutObjectArgs.builder()
+                        .bucket(minioParam.getBucketName())
                         .object(filePath)
                         .stream(file.getInputStream(), -1, 10485760)
                         .contentType(file.getContentType())
@@ -132,17 +110,15 @@ public class MinioService {
     }
 
     public ApiResult deleteFile(String fileName) throws Exception {
-        if (Objects.equals(fileName, "")){
+        //fileName为 /路径/文件名 不需要加桶名
+        if (Objects.equals(fileName, "")) {
             return ApiResult.error("文件不为空");
         }
-        //将文件名设置为uuid，在并发数据少的时候是不会重复的
-        //故小型项目可以直接用uuid来删除文件
-        //大项目则需要用路径+文件名
+
         MinioClient minioClient = minioClientPool.borrowObject();
         minioClient.removeObject(
                 RemoveObjectArgs.builder().bucket(minioParam.getBucketName()).object(fileName).build()
         );
         return ApiResult.ok();
     }
-
 }

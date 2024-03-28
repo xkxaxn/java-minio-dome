@@ -1,4 +1,4 @@
-package com.xkxaxn.miniodemo.common;
+package com.xkxaxn.minio_demo.common;
 
 import java.util.UUID;
 

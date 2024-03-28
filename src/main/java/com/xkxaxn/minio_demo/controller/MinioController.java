@@ -1,7 +1,7 @@
-package com.xkxaxn.miniodemo.controller;
+package com.xkxaxn.minio_demo.controller;
 
-import com.xkxaxn.miniodemo.common.constant.api.ApiResult;
-import com.xkxaxn.miniodemo.service.MinioService;
+import com.xkxaxn.minio_demo.common.constant.api.ApiResult;
+import com.xkxaxn.minio_demo.service.MinioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +25,7 @@ public class MinioController {
     /**
      * 删除文件
      */
-    @PostMapping("/common/deletefile")
+    @GetMapping("/common/deletefile")
     public ApiResult uploadFile(String fileName ) throws Exception {
         return minioService.deleteFile(fileName);
     }
